@@ -1,18 +1,19 @@
 project_name: k8ssandra-client
 builds:
-  id: "kubectl-k8ssandra"
-  main: cmd/kubectl-k8ssandra/main.go
 - env:
   - CGO_ENABLED=0
   goos:
   - linux
   - darwin
+  - windows
   goarch:
   - amd64
   - arm64
   mod_timestamp: '{{ .CommitTimestamp }}'
   flags:
     - -trimpath
+  id: "kubectl-k8ssandra"
+  main: cmd/kubectl-k8ssandra/main.go
 
 # proxies from the go mod proxy before building
 # https://goreleaser.com/customization/gomod
