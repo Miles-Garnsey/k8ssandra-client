@@ -1,7 +1,7 @@
 project_name: k8ssandra-client
 builds:
 - binary: "kubectl-k8ssandra"
-  main: cmd/kubectl-k8ssandra/main.go
+  main: ./cmd/kubectl-k8ssandra/main.go
   env:
   - CGO_ENABLED=0
   goos:
@@ -19,7 +19,7 @@ builds:
 # proxies from the go mod proxy before building
 # https://goreleaser.com/customization/gomod
 gomod:
-  proxy: true
+  proxy: false
 
 # config the checksum filename
 # https://goreleaser.com/customization/checksum
